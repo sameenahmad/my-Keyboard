@@ -4,7 +4,7 @@ window.addEventListener("keydown", function checkKeyPress(event) {
   let pushButton = event.key;
   checkBtn(pushButton);
   const curElem = document.getElementById(pushButton);
-  if (!curElem) curElem.play();
+  if (curElem) curElem.play();
 });
 
 function checkBtn(keyValue) {
