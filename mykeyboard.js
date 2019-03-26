@@ -1,7 +1,7 @@
-var buttons = document.getElementsByClassName("button");
+let buttons = document.getElementsByClassName("button");
 
 window.addEventListener("keydown", function checkKeyPress(event) {
-  var pushButton = event.key;
+  let pushButton = event.key;
   checkBtn(pushButton);
 
   switch (pushButton) {
@@ -40,12 +40,15 @@ window.addEventListener("keydown", function checkKeyPress(event) {
 });
 
 function checkBtn(keyValue) {
-  for (i = 0; i < buttons.length; i++) {
-    var btnText = buttons[i].innerText;
+  for (let i = 0; i < buttons.length; i++) {
+    let btnText = buttons[i].innerText;
     btnText = btnText.toLowerCase();
 
     if (btnText === keyValue) {
-      buttons[i].style.background = "hotpink";
+      buttons[i].style.transform = "scale(1.1)";
+      setTimeout(() => {
+        buttons[i].style.transform = "scale(1)";
+      }, 300);
     }
   }
 }
